@@ -28,7 +28,7 @@ jobs:
           password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
     steps:
       - checkout
-      - run: echo "Amaaaazing snow this morning" 
+      - run: $MY_NAME1 #echo "Amaaaazing snow this morning" 
           #name: "echo an env var that is part of our project"
           #command: |
           #  echo $MY_NAME1
