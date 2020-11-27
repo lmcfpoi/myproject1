@@ -37,7 +37,7 @@ jobs:
           username: mydockerhub-user
           password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
     steps:
-      - persist_to_workspace:
+      - attach_workspace:
           root: /myworkspace
           paths:
             - output.txt
@@ -46,6 +46,6 @@ jobs:
 workflows:
   jobs:
     - save_hello_world_output
-    - print_output_file
-        #requires:
-         # - print_output_file
+    #- print_output_file
+        requires:
+          - print_output_file
