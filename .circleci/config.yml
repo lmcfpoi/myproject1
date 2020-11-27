@@ -15,10 +15,6 @@
 version: 2.1
 
 workflows:
-  test-env-vars:
-    jobs:
-      - build
-
 jobs:
   save_hello_world_output:
     docker:
