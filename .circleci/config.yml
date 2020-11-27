@@ -23,7 +23,7 @@ jobs:
           username: mydockerhub-user
           password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
     steps:
-      - checkout
+      #- checkout
       - run: echo  "HELLLLLOOOOO WWWWOOOOOOORRRRLLLLLLD" > output.txt
       - persist_to_workspace:
           root: /myworkspace
@@ -42,8 +42,7 @@ jobs:
           paths:
             - output.txt
       - run: cat output.txt
-
-#workflows:
- # jobs:
- #   - save_hello_world_output
-  #  - print_output_file
+workflows:
+  jobs:
+    - save_hello_world_output
+    - print_output_file
